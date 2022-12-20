@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>date.html</title>
+</head>
+<body>
+  <div id="result"></div>
+  <script>
+
+    //d-day 2023-5-31
+    let now = new Date("2022-12-19");
+    let firstDay = new Date("2023-5-31");
+
+
+    let passedTime = now.getTime() - firstDay.getTime();
+    result.innerHTML = Math.floor(passedTime/1000/60/60/24) + '<br>'; //일수
+    result.innerText += passedTime/1000/60/60;             //시간
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom.html</title>
+</head>
+<body>
+
+  <input id="txt1">
+  <input id="txt2">
+
+  <button id="addBtn1">추가</button>
+  <button id="addBtn2">추가</button>
+
+  <selct id="itemList"></selct>
+  <option value ="apple">사과</option>
+
+  </body>
+
+
+  <script>
+    addBtn1.onclick = function() {
+      //li태그 생성
+      let li = document.createElement("li")
+      //태그에 속성을 지정
+      li.setAttribute("class", "item");
+      //태그내용 변경
+      li.innerText = txt.value;
+
+
+      //부모태그에 연결
+      itemList.appendChild(li);
+    }
+
+      addBtn.onclick = function() {
+        itemList.innerHTML += `<li class = "iteam">${txt.value}</li>`
+      }
+
+
+  </script>
+  
+</body>
+</html>

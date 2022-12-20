@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  //예술점수
+  let pcs_score = [2,10,4,5];
+
+//배열받을 곳
+function total2(beauti){
+  let b = 0;
+  for(let i = 0 ; i < beauti.length ; i++){
+    b += beauti[i]
+  }
+  return b ;
+}
+
+//최대값
+function max(beauti){
+  let m = beauti[0];
+for(let i = 0 ; i < beauti.length ; i++){
+  if(beauti[i] > m){
+    m = beauti[i]
+    }
+  }
+  return m;
+}
+
+//최소값
+function min(beauti){
+  let m = beauti[0];
+  for(let i = 1 ; i < beauti.length ; i++){
+    if(beauti[i] < m){
+      m = beauti[i]
+    }
+  }
+  return m;
+}
+  </script>
+</body>
+</html>

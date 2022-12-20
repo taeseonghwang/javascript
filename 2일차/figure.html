@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>figure.html</title>
+</head>
+<body>
+  <script>
+  /* 피겨 점수 계산 
+  최댓값, 최솟값, 합계, 평균*/
+  
+
+  //매개변수: 배열(점수), 리턴: 합계
+  function total(score) {
+    let s =0;
+    for(let i=0; i<score.length; i++){
+      s += score[i]
+    }
+    return s;
+  }
+
+
+  //쵀닷값 변수 선언
+  //점수배열 수만큼 반복
+  //최댓값이랑 배열의요소 값을 비교해서 요소값이 크면 최댓값 변수에 저장
+  //최댓값 리턴
+
+  function max(score) {
+    let m =score[0];
+    for(let i=1; i<score.length; i++) {
+      if(score[i]>m) {
+          m = score[i]
+      }
+    }
+    return m;
+  }
+
+  function min(score) {
+    let m =score[0];
+    for(let i=1; i<score.length; i++) {
+      if(score[i]<m) {
+          m = score[i]
+      }
+      return m;
+
+    }
+
+  }
+ let tes_score = [3,4,1,5];
+ let tes_total = total(tes_score);
+ let tes_max = max(tes_score);
+ let tes_min = min(tes_score);
+ let avg = (tes_total - tes_max - tes_min) / (tes_score.length-2);
+
+console.log('총점', tes_total)
+console.log('최고점수', tes_max)
+console.log('최저점수', tes_min)
+console.log('평균', avg)
+
+ //예술점수
+ let pcs_score = [2,10,4,5];
+
+//배열받을 곳
+function total2(beauti){
+  let b = 0;
+  for(let i = 0 ; i < beauti.length ; i++){
+    b += beauti[i]
+  }
+  return b ;
+}
+
+//최대값
+function max(beauti){
+  let m = beauti[0];
+for(let i = 0 ; i < beauti.length ; i++){
+  if(beauti[i] > m){
+    m = beauti[i]
+    }
+  }
+  return m;
+}
+
+//최소값
+function min(beauti){
+  let m = beauti[0];
+  for(let i = 1 ; i < beauti.length ; i++){
+    if(beauti[i] < m){
+      m = beauti[i]
+    }
+  }
+  return m;
+}
+
+
+
+</Script>
+</body>
+</html>
