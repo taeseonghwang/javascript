@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>random_inteval.html</title>
+</head>
+<body>
+  <script>
+    let imgArr = new Array();
+    imgArr.push("./imj/강아지1.jpg");
+    imgArr.push("./imj/강아지2.jpg");
+    imgArr.push("./imj/강아지3.jpg");
+    imgArr.push("./imj/사과향.jpg");
+
+    function changeImg() {
+
+      let num = Math.floor(Math.random()*imgArr.length)   
+       img.src = imgArr[num]  //0~0.9991 *10 -> 0~9
+    }
+
+    window.setInterval(changeImg, 2000)
+
+
+  
+
+  </script>
+  
+</body>
+</html>
