@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movies.html</title>
+</head>
+
+<body>
+  <h3>영화정보</h3>
+  <div id="result"></div>
+  <input id="dt"><button id="btnSelect">조회</button>
+  <div id="result"></div>
+
+  <script>
+    btnSelcet.addEventListener('click', function() {
+      //input태그 값이 확인
+      
+    })
+
+    
+    
+  //ajax 호출
+    
+    //url, 응답처리
+    //1.xhr객체 생성
+    let xhr = new XMLHttpRequest();
+    
+  
+    //2. 콜백함수
+    xhr.onload = function() {callback(xhr); }
+
+    //3. 요청연결
+    let url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20221221' + dt.value;
+    xhr.open('get', url)
+
+    //4. 요청전달
+    xhr.send();
+
+    function callback(xhr) {
+     let obj = JSON.parse(xhr.response)
+     let obj2 =obj.boxOfficeResult.dailyBoxOfficeList
+
+     //tr태그로 만들어서 table연결
+
+     for(let i=0; i<obj2.length; i++) {
+      let mv = `<div>
+        <span clsass="no">${mvlist[i].rank}</span>
+        <span class="no">${mvlist[i].rank}</span>
+        <span class="no">${mvlist[i].rank}</span>
+
+          
+        result.innerHTML +=div;
+     }
+     
+    }
+
+  </script>
+</body>
+
+</html>

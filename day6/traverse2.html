@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>traverse2.html</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td><button>조회</button></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4</td>
+      <td><button>조회</button></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td><button>조회</button></td>
+    </tr>
+  </table>
+  <script>
+    document.querySelector("table").addEventListener("click", function(ev) {
+      //ev.target
+      //버튼이면 클릭한 버튼의 형들의 td들의 값을 읽어준다.
+      
+        let node = ev.target;
+        if(node.nodeName =="BUTTON") {
+          let tds = node.closest("tr").children
+          console.log(tds[0].innerText)
+          console.log(tds[1].innerText)
+          console.log(tds[2].innerText)
+          console.log(tds[3].innerText)
+          console.log(tds[4].innerText)
+          console.log(tds[5].innerText)
+
+
+          let fd1 = node.parentElement.previousElementSibling.innerText
+          let fd2 = node.parentElement.previousElementSibling.previousElementSibling.innerText
+
+          console.log(td1,td2);
+
+
+        }
+      
+    })
+
+
+
+
+//     basket.addEventListener("click",function(event){
+
+// //이벤트가 실행되는 태그를 찾아보기
+// console.dir(event.target);
+
+// //실제로 이벤트가 발생한 대상(태그=타겟)
+// let node = event.target; 
+
+// //div 본인이면 본인삭제
+// if(node.classList.contains("fruit")){
+//   node.remove();
+// }
+
+// //div가 아닌 span 태그이면 부모 div를 삭제
+// else if(node.nodeName == "BUTTON"){ 
+//   node.closest("div").remove();
+// }
+// })
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
