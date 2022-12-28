@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comments.html</title>
+  </head>
+  <body>
+    <h3>comments관리</h3>
+    <button onclick="selectPost()">댓글</button>
+    <div id="commentsList">악플</div>
+
+    <script>
+      selectComments();
+
+      //btnAdd.addEventListener("click", insertPost);
+
+      function selectComments() {
+        let url = "http://localhost:3000/posts";
+        let xhr = new XMLHttpRequest();
+
+        xhr.onload = function () {
+          console.log("댓글");
+          // postlist.innerHTML += xhr.responseText;
+          const post = JSON.parse(xhr.responseText);
+          commentsList.innerHTML = "";
+          for (let i = 0; i < commentsList.length; i++) {
+            commentsList.innerHTML += `<div>${comments[i].id} ${comments[i].title}
+              <button data-id="${comments[i].id}">삭제</button></div>`;
+          }
+        };
+        xhr.open("get", url);
+        xhr.send();
+        console.log("요청시작");
+      }
+    </script>
+  </body>
+</html>
